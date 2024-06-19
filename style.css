@@ -1,0 +1,115 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: rgb(6,104,179); /* Blue background color */
+    background-image: url('path-to-your-transparent-image.png'); /* Path to your transparent image */
+    background-repeat: repeat; /* Make the image repeat */
+    background-size: 100px 100px; /* Adjust the size of your background image */
+    background-position: center; /* Center the background image */
+  }
+    
+    #image-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-gap: 5vw; /* Gap based on viewport width */
+      padding: 5vw; /* Padding based on viewport width */
+    }
+    
+    .grid-image, .bottom-image {
+      width: 100%; /* Full width of the container */
+      height: auto; /* Maintain aspect ratio */
+      border-radius: 10px; /* Rounded corners */  
+      object-fit: cover; /* Ensures the image covers the area */
+    }
+    
+    .grid-image {
+      width: 100%; /* Full width of the container */
+      height: auto; /* Maintain aspect ratio */
+      border-radius: 10px; /* Rounded corners */
+      object-fit: cover; /* Ensures the image covers the area */
+      border: 8px solid rgb(125,194,66); /* Thicker green border for grid images */
+      transition: box-shadow .1s, transform .1s; /* Smooth transition for effects */
+      box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px;
+    }
+    
+    #bottom-section {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 2vw;
+    }
+    
+    #bottom-image {
+      border: 8px solid black; /* Thicker black border for the bottom image */
+      /* Set width to match grid image size */
+      width: calc((100vw - 11vw) / 5); /* Adjust based on the number of images per row and the gap */
+      height: auto; /* Maintain aspect ratio */
+    }
+    
+    /* Grayscale effect */
+    .grayscale {
+      filter: grayscale(100%) brightness(50%);
+    }
+  
+  /* CSS */
+  .button-30 {
+    align-items: center;
+    appearance: none;
+    background-color: #FCFCFD;
+    border-radius: 4px;
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #36395A;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono", monospace;
+    height: 60px; /* Increased height */
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 20px; /* Increased padding */
+    padding-right: 20px; /* Increased padding */
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s, transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+    font-size: 22px; /* Increased font size */
+  }
+  
+  .button-30:focus {
+    box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  }
+  
+  .button-30:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    transform: translateY(-2px);
+  }
+  
+  .button-30:active {
+    box-shadow: #D6D6E7 0 3px 7px inset;
+    transform: translateY(2px);
+  }
+  
+  .grid-image:hover, .bottom-image:hover {
+    box-shadow: rgba(45, 35, 66, 0.2) 0 2px 4px; /* Lighter shadow for faster rendering */
+    transform: translateY(-1px); /* Smaller movement */
+  }
+  
+  .grid-image:active, .bottom-image:active {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 3px 7px inset;
+    transform: translateY(2px);
+  }
+  
+  @media (max-width: 600px) { /* Example media query for mobile devices */
+    .grid-image, .bottom-image {
+      transition: box-shadow .05s, transform .05s; /* Even faster transition for mobile */
+    }
+  }
